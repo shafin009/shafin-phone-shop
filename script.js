@@ -1,16 +1,19 @@
 
 
 
+
+
+
 const searchPhone = () => {
     const input = document.getElementById('input');
     const searchText = input.value;
     input.value = '';
 
+
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayResult(data.data.slice(0, 20)))
-    document.getElementById('error').innerText = ''
 
 }
 
@@ -61,27 +64,38 @@ const information = (details) => {
 
 
     const mobileDetails = document.getElementById('mobile-details')
-    mobileDetails.innerHTML = '';
+    mobileDetails.innerHTML = ' ';
     const div = document.createElement('div');
     div.classList.add('col')
     div.innerHTML = `
     
-    <div class="card p-3 shadow-lg">
-        <img src="${details.image}" class="card-img-top img-fluid w-25 mx-auto" alt="...">
-        <div class="card-body">
-            <p class="card-title">Model-${details.name}</p>
-            <p9 class="card-title">Brand-${details.brand}</p>
+<div class="card shadow-lg text-center mx-auto">
+        <img src="${details.image}" class="card-img-top img-fluid w-50 mx-auto" alt="...">
+    <div class="card-body">
+            <p class="card-title">Model- ${details.name}</p>
+            <p class="card-title">Brand- ${details.brand}</p>
+            <p class="card-title">Memory- ${details.mainFeatures.memory}</p>
+            <p class="card-title">Chipset- ${details.mainFeatures.chipSet}</p>
+            <p class="card-title">Display Size- ${details.mainFeatures.displaySize}</p>
+            <p class="card-title">Sensors- ${details.mainFeatures?.sensors}</p>
+            <p class="card-title">Release Date- ${details?.releaseDate}</p>
+            <p class="text-center text-success">More Details <br>_________</p>
+            <p class="card-title">NFC- ${details.others?.NFC}</p>
+            <p class="card-title">USB- ${details.others?.USB}</p>
+            <p class="card-title">WLAN- ${details.others?.WLAN}</p>
+            <p class="card-title">GPS- ${details.others?.GPS}</p>
+            <p class="card-title">Radio- ${details.others?.Radio}</p>
             
-        </div>
-    </div>
-    
+            
+    </div>    
+</div>
     
     `
     mobileDetails.appendChild(div);
-
-
+    window.scrollTo(0, 1000);
 
 }
+
 
 
 
