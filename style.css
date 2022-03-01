@@ -1,0 +1,13 @@
+/*---------Background Image--------*/
+
+body{
+    background-image:url("pic.jpg");
+    background-repeat: no-repeat;
+   background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.text-info{
+    font-family: 'Luxurious Roman', cursive;
+
+}
