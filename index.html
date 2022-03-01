@@ -22,22 +22,28 @@
         <div class="m-5">
             <h1 class="text-center">Search Your Phone</h1>
             <!----------------phone search area--------->
-            <form class="d-flex m-auto w-75">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="input" />
-                <button onclick="searchPhone()" class="btn btn-outline-primary" type="submit"
-                    id="search">Search</button>
-            </form>
-            <br>
-            <br>
+
+            <div class="input-group mb-3">
+                <input id="input" type="text" class="form-control" placeholder="search phone"
+                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button onclick="searchPhone()" class="btn btn-outline-secondary" type="button"
+                    id="button-addon2">Search</button>
+            </div>
+        </div>
+
+        <br>
+        <br>
 
 
-            <!-------------phone search result------------->
+        <!-------------phone search result------------->
+        <div id="search-result" class="row row-cols-1 row-cols-md-3 g-4">
+            
+        </div>
 
 
 
-
-            <!------------------Cards------------------->
-            <div class="card-group">
+        <!------------------Cards------------------->
+        <!-- <div class="card-group">
                 <div class="card">
                     <img src="..." class="card-img-top" alt="...">
                     <div id="phone1" class="card-body">
@@ -65,24 +71,24 @@
                     </div>
                     <button type="button" class="btn btn-primary btn-sm">Small button</button>
                 </div>
-            </div>
+            </div> -->
 
 
 
-            <!------------ spinner -------------->
-            <!-- <div class="d-flex justify-content-center mt-5 d-none" id="spinner">
+        <!------------ spinner -------------->
+        <!-- <div class="d-flex justify-content-center mt-5 d-none" id="spinner">
                 <div class="spinner-border" role="status">
                     <span class="visually-hidden">Loading...</span>
                 </div>
             </div>
             ---------- spinner end ----------->
-            <!-- </div> -->
-            <!------------- error message div ----------->
-            <!-- <div id="error-message"></div>
+        <!-- </div> -->
+        <!------------- error message div ----------->
+        <!-- <div id="error-message"></div>
         <-------- single product ingredients' div ------------- -->
-            <!-- <div id="product-info"></div> -->
-            <!------------------ all products div -------------->
-            <!-- <div class="row row-cols-1 row-cols-md-4 g-4 mt-3" id="phone-items"></div> -->
+        <!-- <div id="product-info"></div> -->
+        <!------------------ all products div -------------->
+        <!-- <div class="row row-cols-1 row-cols-md-4 g-4 mt-3" id="phone-items"></div> -->
     </section>
 
 
