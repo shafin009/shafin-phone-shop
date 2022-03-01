@@ -21,7 +21,7 @@ const searchPhone = () => {
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     fetch(url)
         .then(res => res.json())
-        .then(data => displayResult(data.data.slice(0, 20)))
+        .then(data => displayResult(data.data.slice(20, 40)))
 
 };
 
@@ -31,7 +31,7 @@ const displayResult = (phones) => {
     const searchResult = document.getElementById('search-result');
     searchResult.innerHTML = '';
 
-    //------------Error Message (Search Button)--------------------
+    //------------Error Message Handle--------------------
 
     if (phones.length == 0) {
         const errorMessageDiv = document.getElementById("error");
