@@ -3,7 +3,8 @@
 
 
 
-// --------------------Search Button----------------
+// ----------------------Search Button-----------------
+
 const searchPhone = () => {
 
     const mobileDetails = document.getElementById('mobile-details');
@@ -15,7 +16,8 @@ const searchPhone = () => {
     errorMessageDiv.textContent = '';
 
 
-    //----------------------Fetch Section-------------------
+    //-------------------------Fetch Section----------------------
+
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     fetch(url)
         .then(res => res.json())
@@ -30,21 +32,23 @@ const displayResult = (phones) => {
     searchResult.innerHTML = '';
 
     //------------Error Message (Search Button)--------------------
+
     if (phones.length == 0) {
         const errorMessageDiv = document.getElementById("error");
 
         errorMessageDiv.innerHTML = `
-                <p class="text-center fs-1 fw-bold bg-primary bg-opacity-75 rounded-pill text-light mx-5">Sorry !Your Search did not Found.</p>
+                <p class="text-center fs-1 fw-bold bg-primary bg-opacity-75 rounded-pill text-light mx-5">📵 Sorry !Your Search did not Found. 📵</p>
              
               `;
     }
-    //-------------------ForEach Section--------------------
+    //-------------------ForEach Section-------------------------
+
     phones.forEach(phone => {
 
         const div = document.createElement('div');
         div.classList.add('col');
 
-        //----------------innerHTML of Search Result Section------------------
+        //----------------innerHTML of Search Result Section--------------------
 
         div.innerHTML = `
             
@@ -69,9 +73,11 @@ const displayResult = (phones) => {
 };
 
 //---------------------Phone id Section------------
+
 const seeDetails = (id) => {
 
     //----------------------2nd Fetch Section-------------
+
     const url2 = `https://openapi.programming-hero.com/api/phone/${id}`
     fetch(url2)
         .then(res => res.json())
@@ -81,21 +87,18 @@ const seeDetails = (id) => {
 }
 const productDetails = (details) => {
 
-    if (details.others == null) {
-        const errorMessageDiv = document.getElementById("error");
 
-        errorMessageDiv.innerHTML = `
-                <p class="text-center fs-1 fw-bold bg-primary bg-opacity-75 rounded-pill text-light mx-5">Sorry !Your Search did not Found.</p>
-             
-              `;
-    }
+
 
     const mobileDetails = document.getElementById('mobile-details');
     mobileDetails.innerHTML = ' ';
+
+
     const div = document.createElement('div');
     div.classList.add('col')
 
     //-------------------innerHTML of Details Section------------------
+
     div.innerHTML = `
     
     <div class="card shadow-lg text-center mx-auto pt-4">
@@ -125,24 +128,8 @@ const productDetails = (details) => {
     mobileDetails.appendChild(div);
     window.scrollTo(0, 1000);
 
-
 };
 
-
-// const errorMessage = () => {
-//     const searchText = document.getElementById("input").value;
-//     const errorMessageDiv = document.getElementById("error");
-//     document.getElementById("product-info").innerHTML = "";
-
-//     errorMessageDiv.innerHTML = ` <div class="card m-auto p-5 bg-warning" style="width: 18rem">
-//             <h5 class="card-title">Dear Sir/Ma'am,</h5>
-//             <p class="card-text">
-//               Your search --<b>${searchText}</b>-- did not match any of our set meal. Please enter a
-//               correct name.
-//             </p>
-//           </div>;
-//           `
-// };
 
 
 
