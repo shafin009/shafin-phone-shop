@@ -11,12 +11,15 @@ const searchPhone = () => {
     const input = document.getElementById('input');
     const searchText = input.value;
     input.value = '';
+    const errorMessageDiv = document.getElementById("error");
+    errorMessageDiv.textContent = '';
 
     //----------------------Fetch Section-------------------
     const url = `https://openapi.programming-hero.com/api/phones?search=${searchText}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayResult(data.data.slice(0, 20)))
+
 
 
 };
@@ -28,6 +31,14 @@ const displayResult = (phones) => {
     searchResult.innerHTML = '';
 
     //-------------------For Each Section-----------------
+    if (phones.length == 0) {
+        const errorMessageDiv = document.getElementById("error");
+
+        errorMessageDiv.innerHTML = `
+                <p class="text-center text-light">Your search did not found</p>
+             
+              `;
+    }
 
     phones.forEach(phone => {
 
