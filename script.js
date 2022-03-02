@@ -107,17 +107,17 @@ const productDetails = (details) => {
             <p class="card-title"><span class="fw-bold">Model- </span>${details.name}</p>
             <p class="card-title"><span class="fw-bold">Brand- </span>${details.brand}</p>
             <p class="card-title"><span class="fw-bold">Memory- </span>${details.mainFeatures.memory}</p>
-            <p class="card-title"><span class="fw-bold">Chipset- </span>${details.mainFeatures.chipSet}</p>
+            <p class="card-title"><span class="fw-bold">Chipset- </span>${details.mainFeatures.chipSet ? details.mainFeatures.chipSet : "Unknown"}</p>
             <p class="card-title"><span class="fw-bold">Display Size- </span>${details.mainFeatures.displaySize}</p>
-            <p class="card-title"><span class="fw-bold">Sensors- </span>${details.mainFeatures?.sensors}</p>
-            <p class="card-title"><span class="fw-bold">Release Date- </span>${details?.releaseDate}</p>
+            <p class="card-title"><span class="fw-bold">Sensors- </span>${details.mainFeatures.sensors}</p>
+            <p class="card-title"><span class="fw-bold">Release Date- </span>${details.releaseDate ? details.releaseDate : 'Unknown'}</p>
             <p class="text-center text-success"><span class="fw-bold">More Details</span><br>_________</p>
             
-            <p class="card-title"><span class="fw-bold">NFC- </span>${details.others?.NFC}</p>
-            <p class="card-title"><span class="fw-bold">USB- </span>${details.others?.USB}</p>
-            <p class="card-title"><span class="fw-bold">WLAN- </span>${details.others?.WLAN}</p>
-            <p class="card-title"><span class="fw-bold">GPS- </span>${details.others?.GPS}</p>
-            <p class="card-title"><span class="fw-bold">Radio- </span>${details.others?.Radio}</p>
+            <p class="card-title"><span class="fw-bold">NFC- </span>${details.others.NFC}</p>
+            <p class="card-title"><span class="fw-bold">USB- </span>${details.others.USB}</p>
+            <p class="card-title"><span class="fw-bold">WLAN- </span>${details.others.WLAN}</p>
+            <p class="card-title"><span class="fw-bold">GPS- </span>${details.others.GPS}</p>
+            <p class="card-title"><span class="fw-bold">Radio- </span>${details.others.Radio}</p>
             
             
         </div>    
